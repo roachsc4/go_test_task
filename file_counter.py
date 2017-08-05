@@ -9,13 +9,13 @@ try:
     with open(filename, 'r') as f:
         for line in f:
             line_counter += 1
+    f.close()
 except OSError as e:
     if e.errno == 2:
         print("Файл %s не найден." % filename)
     else:
         print('Непредвиденная ошибка во время работы с файлом.')
     sys.exit()
-f.close()
 print(filename, line_counter)
 
 
